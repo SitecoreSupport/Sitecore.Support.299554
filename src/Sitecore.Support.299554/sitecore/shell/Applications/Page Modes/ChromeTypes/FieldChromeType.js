@@ -9,7 +9,11 @@
         var persistedValue = Sitecore.PageModes.ChromeManager.getFieldValueContainerById(this.controlId());
         var fieldValueInput = this.chrome.element.prev().prev(".scFieldValue");
         if (fieldValueInput.length == 0) {
-            fieldValueInput = null;
+            // Sitecore.Support.299554
+            fieldValueInput = this.chrome.element.parent().prev(".scFieldValue");
+            if (fieldValueInput.length == 0) {
+                fieldValueInput = null;
+            }
         }
 
         if (persistedValue) {

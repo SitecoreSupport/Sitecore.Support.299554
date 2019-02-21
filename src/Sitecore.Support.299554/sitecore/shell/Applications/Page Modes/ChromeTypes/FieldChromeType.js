@@ -10,7 +10,7 @@
         var fieldValueInput = this.chrome.element.prev().prev(".scFieldValue");
         if (fieldValueInput.length == 0) {
             // Sitecore.Support.299554
-            fieldValueInput = this.chrome.element.parent().prev(".scFieldValue");
+            fieldValueInput = this.chrome.element.parents().prev(".scFieldValue");
             if (fieldValueInput.length == 0) {
                 fieldValueInput = null;
             }
